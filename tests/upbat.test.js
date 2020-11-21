@@ -1,8 +1,6 @@
 'use strict';
 
 require('should');
-const fs = require('fs');
-
 
 describe('Uploader Battery', function ( ) {
   var data = {devicestatus: [{mills: Date.now(), uploader: {battery: 20}}]};
@@ -11,7 +9,7 @@ describe('Uploader Battery', function ( ) {
     var sandbox = require('../lib/sandbox')();
     var ctx = {
       settings: {}
-      , language: require('../lib/language')(fs)
+      , language: require('../lib/language')()
     };
     ctx.language.set('en');
     ctx.levels = require('../lib/levels');
@@ -44,7 +42,7 @@ describe('Uploader Battery', function ( ) {
           done();
         }
       }
-      , language: require('../lib/language')(fs)
+      , language: require('../lib/language')()
     };
     ctx.language.set('en');
 
@@ -65,7 +63,7 @@ describe('Uploader Battery', function ( ) {
           done();
         }
       }
-      , language: require('../lib/language')(fs)
+      , language: require('../lib/language')()
     };
     ctx.language.set('en');
 
@@ -84,7 +82,7 @@ describe('Uploader Battery', function ( ) {
           options.hide.should.equal(true);
           done();
         }
-      }, language: require('../lib/language')(fs)
+      }, language: require('../lib/language')()
     };
     ctx.language.set('en');
 
@@ -99,7 +97,7 @@ describe('Uploader Battery', function ( ) {
 
     var ctx = {
       settings: {}
-      , language: require('../lib/language')(fs)
+      , language: require('../lib/language')()
     };
     ctx.language.set('en');
 
