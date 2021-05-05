@@ -15,7 +15,6 @@
   - [List of Contributors](#list-of-contributors)
     - [Core developers, contributing developers, coordinators and documentation writers](#core-developers-contributing-developers-coordinators-and-documentation-writers)
     - [Plugin contributors](#plugin-contributors)
-    - [Translators](#translators)
     - [List of all contributors](#list-of-all-contributors)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -35,10 +34,11 @@
 [coverage-url]: https://coveralls.io/r/nightscout/cgm-remote-monitor?branch=master
 [discord-img]: https://img.shields.io/discord/629952586895851530?label=discord%20chat
 [discord-url]: https://discord.gg/rTKhrqz
+[example-env-template]: docs/example-template.env
 
 ## Translations
 
-Please visit our [project in Crowdin](https://crowdin.com/project/nightscout) to translate Nigthscout. If you want to add a new language, please get in touch with the dev team in Gitter.
+Please visit our [project in Crowdin](https://crowdin.com/project/nightscout) to translate Nigthscout. If you want to add a new language, please get in touch with the dev team in [Discord][discord-url].
 
 ## Installation for development
 
@@ -50,7 +50,7 @@ Nightscout is a Node.js application. The basic installation of the software for 
    dependency installation has to be done using a non-root user - _do not use root_ for development and hosting
    the software!
 3. Get a Mongo database by either installing Mongo locally, or get a free cloud account from mLab or MongoDB Atlas.
-4. Configure Nightscout by copying `my.env.template` to `my.env` and run it - see the next chapter in the instructions
+4. Configure Nightscout by copying [`docs/example-template.env`][example-env-template] to `my.env` and run it - see the next chapter in the instructions
 
 ## Develop on `dev`
 
@@ -58,7 +58,7 @@ We develop on the `dev` branch. All new pull requests should be targeted to `dev
 
 You can get the `dev` branch checked out using `git checkout dev`.
 
-Once checked out, install the dependencies using `npm install`, then copy the included `my.env.template`file to `my.env` and edit the file to include your settings (like the Mongo URL). Leave the `NODE_ENV=development` line intact. Once set, run the site using `npm run dev`. This will start Nightscout in the development mode, with different code packaging rules and automatic restarting of the server using nodemon, when you save changed files on disk. The client also hot-reloads new code in, but it's recommended to reload the website after changes due to the way the plugin sandbox works.
+Once checked out, install the dependencies using `npm install`, then copy the included  [`docs/example-template.env`][example-env-template] to `my.env` file to `my.env` and edit the file to include your settings (like the Mongo URL). Leave the `NODE_ENV=development` line intact. Once set, run the site using `npm run dev`. This will start Nightscout in the development mode, with different code packaging rules and automatic restarting of the server using nodemon, when you save changed files on disk. The client also hot-reloads new code in, but it's recommended to reload the website after changes due to the way the plugin sandbox works.
 
 Note the template sets `INSECURE_USE_HTTP` to `true` to enable the site to work over HTTP in local development.
 
